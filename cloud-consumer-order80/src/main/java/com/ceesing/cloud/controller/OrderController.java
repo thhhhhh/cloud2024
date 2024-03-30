@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class OrderController {
     // 服务提供者地址
-    private static final String URL = "http://localhost:8001";
+    private static final String URL = "http://cloud-payment-service";
 
     @Resource
     private RestTemplate restTemplate;
