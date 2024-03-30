@@ -32,7 +32,7 @@ public class PayControllerResultData {
         return ResultData.success("success");
     }
 
-    @DeleteMapping(value = "/delete")
+    @PostMapping(value = "/delete")
     @Operation(summary = "删除", description = "删除支付流水方法")
     public ResultData<String> deletePay(@RequestBody Pay pay) {
         log.info("deletePay:{}", pay);
@@ -40,7 +40,7 @@ public class PayControllerResultData {
         return ResultData.success("success");
     }
 
-    @PutMapping(value = "/update")
+    @PostMapping(value = "/update")
     @Operation(summary = "更新", description = "更新支付流水方法")
     public ResultData<String> updatePay(@RequestBody PayDTO payDTO) {
         log.info("updatePay:{}", payDTO);
