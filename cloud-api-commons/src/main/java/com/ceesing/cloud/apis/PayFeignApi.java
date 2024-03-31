@@ -29,4 +29,13 @@ public interface PayFeignApi {
 
     @GetMapping(value = "/pay/get/info")
     public ResultData<String> getInfoByConsul();
+
+    @GetMapping(value = "/pay/circuit/get/{id}")
+    public String myCircuit(@PathVariable("id") Integer id);
+
+    @GetMapping(value = "/pay/circuit/bulkhead/{id}")
+    public String myBulkhead(@PathVariable("id") Integer id);
+
+    @GetMapping(value = "/pay/circuit/ratelimit/{id}")
+    public String myRatelimit(@PathVariable("id") Integer id);
 }
