@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 @Slf4j
 @Tag(name = "支付微服务模块", description = "支付CRUD")
-public class PayControllerResultData {
+public class PayController {
     @Resource
     private PayService payService;
 
@@ -69,9 +69,11 @@ public class PayControllerResultData {
         return ResultData.success(payService.getAll());
     }
 
+    @Value("${server.port}")
+    private String port;
     @GetMapping(value = "/get/info")
     @Operation(summary = "查询", description = "获取consul上配置信息的测试方法")
     public ResultData<String> getInfoByConsul(@Value("${ceesing.info}") String info) {
-        return ResultData.success(info);
+        return ResultData.success(info + " , " + port);
     }
 }
